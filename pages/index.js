@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
 import TopHeader from "@/components/TopHeader";
@@ -8,8 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
-import GoogleTranslate from "@/components/GoogleTranslate";
+import Recharge from "@/components/recharge";
+import ChatBot from "@/components/ChatBot";
+
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: false,
     infinite: true,
@@ -78,8 +81,22 @@ export default function Home() {
       </Head>
 
       <div className=" ">
+        {/* CHATBOT*/}
+        <Fragment>
+          <div className=" z-50">
+            <button
+              className="  text-white bg-blue-700 fixed bottom-0 right-0 hover:bg-blue-800 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 mr-5 ml-10 my-5"
+              onClick={() => setShowModal(true)}
+            >
+              Modal
+            </button>
+          </div>
+          <ChatBot isVisible={showModal} onClose={() => setShowModal(false)} />
+        </Fragment>
         <TopHeader />
         <Header />
+
+        {/* MAIN SLIDER */}
         <Slider {...settings}>
           <HeroBanner
             header="Get your prepaid sim"
@@ -100,11 +117,13 @@ export default function Home() {
             btnText="BUY SIM"
           /> */}
         </Slider>
-        <section className=" bg-[#f7f7fa]">
+        <Recharge />
+        <section className=" bg-[#f7f7fa] z-0">
           <h1 className=" text-center font-semibold text-xl py-5">
             Product and Services
           </h1>
           <section className=" mx-12">
+            {/* PRODUCT AND SERVICE SLIDER */}
             <Slider {...settingss}>
               <ArticleCard
                 image={
