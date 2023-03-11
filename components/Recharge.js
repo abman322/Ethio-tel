@@ -60,7 +60,7 @@ function Recharge() {
       </div>
       <div className=" flex " id="menu">
         <button
-          className=" mx-2 rounded-xl flex bg-green-200 px-2 py-1 hover:bg-green-500 active"
+          className=" mx-2 rounded-xl text-sm items-center flex bg-[#101010] text-white px-2 py-1 hover:bg-[#101010] active"
           onClick={handleClick}
         >
           <svg
@@ -80,7 +80,7 @@ function Recharge() {
           Prepaid
         </button>
         <button
-          className=" mx-2 rounded-xl flex bg-green-200 px-2 py-1 hover:bg-green-500"
+          className=" mx-2 rounded-xl text-sm items-center text-white flex bg-[#101010] px-2 py-1 hover:bg-[#101010]"
           onClick={handleClick}
         >
           <svg
@@ -100,7 +100,7 @@ function Recharge() {
           Postpaid
         </button>
         <button
-          className=" mx-2 flex rounded-xl bg-green-200 px-2 py-1 hover:bg-green-500"
+          className=" mx-2 flex rounded-xl text-sm items-center text-white bg-[#101010] px-2 py-1 hover:bg-[#101010]"
           onClick={handleClick}
         >
           <svg
@@ -120,7 +120,7 @@ function Recharge() {
           DSL
         </button>
         <button
-          className=" mx-2 rounded-xl bg-green-200 px-2 py-1 hover:bg-green-500 flex"
+          className=" mx-2 text-white text-sm items-center rounded-xl bg-[#101010] px-2 py-1 hover:bg-[#101010] flex"
           onClick={handleClick}
         >
           <svg
@@ -140,7 +140,7 @@ function Recharge() {
           Fiber
         </button>
         <button
-          className=" mx-2 rounded-xl flex bg-green-200 px-2 py-1 hover:bg-green-500"
+          className=" mx-2 text-white text-sm items-center rounded-xl flex bg-[#101010] px-2 py-1 hover:bg-[#101010]"
           onClick={handleClick}
         >
           <svg
@@ -157,7 +157,7 @@ function Recharge() {
               d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
             />
           </svg>
-          Airtel Black
+          Package
         </button>
       </div>
       <div className=" w-3/12">
@@ -169,19 +169,34 @@ function Recharge() {
             name="recharge"
             id="recharge"
           />
-          <button className=" bg-green-500 rounded-xl p-2  " id="vis1">
+          <button
+            className=" bg-[#101010] text-white rounded-xl p-2  "
+            id="vis1"
+          >
             Recharge
           </button>
-          <button className=" bg-green-500 rounded-xl p-2 vis" id="vis2">
+          <button
+            className=" bg-[#101010] text-white rounded-xl p-2 vis"
+            id="vis2"
+          >
             Post pay
           </button>
-          <button className=" bg-green-500 rounded-xl p-2 vis" id="vis3">
+          <button
+            className=" bg-[#101010] text-white rounded-xl p-2 vis"
+            id="vis3"
+          >
             DSL
           </button>
-          <button className=" bg-green-500 rounded-xl p-2 vis" id="vis4">
+          <button
+            className=" bg-[#101010] text-white rounded-xl p-2 vis"
+            id="vis4"
+          >
             Fiber
           </button>
-          <button className=" bg-green-500 rounded-xl p-2 vis" id="vis5">
+          <button
+            className=" bg-[#101010] text-white rounded-xl p-2 vis"
+            id="vis5"
+          >
             Airtel
           </button>
         </form>

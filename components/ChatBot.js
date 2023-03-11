@@ -34,7 +34,7 @@ function ChatBot({ isVisible, onClose }) {
       id="wrapper"
       onClick={handleClose}
     >
-      <div className="absolute bottom-20 right-5 w-3/4 sm:w-2/4 lg:w-1/4 flex flex-col  rounded-md p-3 bg-lime-200">
+      <div className="absolute bottom-20 right-5 w-3/4 sm:w-2/4 lg:w-1/4 flex flex-col rounded-lg p-3 bg-slate-300">
         <button
           className="text-white text-xl place-self-end"
           onClick={() => onClose()}
@@ -80,7 +80,7 @@ function ChatBot({ isVisible, onClose }) {
             </svg>
           </button>
           <input
-            className=" bg-slate-100 w-4/6 rounded-md p-1"
+            className=" bg-slate-100 w-4/6 rounded-full p-3  mr-2"
             onChange={handleChange}
             value={singletext}
             type="text"
@@ -89,7 +89,7 @@ function ChatBot({ isVisible, onClose }) {
           />
           <button
             type="submit"
-            className="w-1/6 bg-orange-500 rounded-2xl justify-center p-2 m-1 flex"
+            className="w-1/6 bg-white rounded-2xl justify-center p-2 m-1 flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@ function ChatBot({ isVisible, onClose }) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className=" text-green-50 w-6 h-6"
+              className=" text-black w-6 h-6"
             >
               <path
                 strokeLinecap="round"
