@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,18 +9,27 @@ import HeroBanner from "@/components/HeroBanner";
 import Footer from "@/components/Footer";
 import BusinessHeader from "@/components/BusinessHeader";
 import ServiceCard from "@/components/ServiceCard";
-import { getBusiness,urlFor } from "./sane";
+import ChatBot from "@/components/ChatBot";
+import {
+  Cloud,
+  Conference,
+  Connectivity,
+  Security,
+  Line,
+  fiveG,
+} from "@/components/SvgIcons";
+import { getBusiness, urlFor } from "../components/sane";
 
 export async function getServerSideProps(context) {
-  const busin=await getBusiness()
-  
-  
+  const busin = await getBusiness();
+
   return {
-    props: {busin}, // will be passed to the page component as props
-  }
+    props: { busin }, // will be passed to the page component as props
+  };
 }
 
-export default function business({busin}) {
+export default function Business({ busin }) {
+  const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: true,
     infinite: true,
@@ -43,19 +52,33 @@ export default function business({busin}) {
         />
       </Head>
       <main>
+        {/* CHATBOT*/}
+        <Fragment>
+          <div className=" z-50">
+            <button
+              className="  text-white rounded-full bg-[#2590ce] fixed bottom-0 right-0 hover:bg-blue-800 focus:outline-none font-medium text-sm  px-5 py-2.5 mr-5 ml-10 my-5"
+              onClick={() => setShowModal(true)}
+            >
+              Chat
+            </button>
+          </div>
+          <ChatBot isVisible={showModal} onClose={() => setShowModal(false)} />
+        </Fragment>
         <TopHeader />
         <BusinessHeader />
         <Slider {...settings}>
-            {busin!=null && busin.map((element)=>{
-                return (
-                  <HeroBanner
-                header={element.title}
-                description={element.description}
-                image={urlFor(element.mainImage).url()}
-                btnText={element.btntxt}
-              />
-                )
-              })}
+          {busin != null &&
+            busin.map((element) => {
+              return (
+                <HeroBanner
+                  key={element}
+                  header={element.title}
+                  description={element.description}
+                  image={urlFor(element.mainImage).url()}
+                  btnText={element.btntxt}
+                />
+              );
+            })}
           <HeroBanner
             header="Dedicated Internet"
             description=" Strong and dedicated leased line connectivity for your company"

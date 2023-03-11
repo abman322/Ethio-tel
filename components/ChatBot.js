@@ -13,7 +13,7 @@ function ChatBot({ isVisible, onClose }) {
     e.preventDefault();
     setLoading(true);
     const message = await fetch(
-      `http://localhost:3000/api/chat?question=${singletext}`
+      `https://ethio-tel.vercel.app/api/chat?question=${singletext}`
     );
     const res = await message.json();
     // setMessage(res);
@@ -47,7 +47,7 @@ function ChatBot({ isVisible, onClose }) {
         >
           {text.map((element, index) => {
             return (
-              <div>
+              <div key={index}>
                 <h1 className=" bg-blue-600 ml-auto text-sm px-2 py-1 w-fit m-3  rounded-md ">
                   {element}
                 </h1>
