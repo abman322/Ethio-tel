@@ -200,7 +200,7 @@ export default function Home({ news, banner, product }) {
           <div className=" w-96 mr-2 bg-white p-7 flex flex-col  gap-4 mb-4">
             <h1 className=" text-xl">
               Ethio Telecom Launches Its Ethiotel Innovation Program Which Is
-              Devised To Empower Our Nation's Technology-Based Startups!
+              Devised To Empower Our Nations Technology-Based Startups!
             </h1>
 
             <p className=" text-slate-500">
@@ -212,7 +212,7 @@ export default function Home({ news, banner, product }) {
           <div className=" w-96 mr-2 bg-white p-7 flex flex-col  gap-4 mb-4">
             <h1 className=" text-xl">
               Ethio Telecom Launches Its Ethiotel Innovation Program Which Is
-              Devised To Empower Our Nation's Technology-Based Startups!
+              Devised To Empower Our Nations Technology-Based Startups!
             </h1>
             <p className=" text-slate-500">
               Our company has been deploying various technologies and value
