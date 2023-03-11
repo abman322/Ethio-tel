@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ServiceCard() {
   return (
-    <div className=" rounded-lg mt-3  bg-[#fafafa] hover:border hover:border-white hover:border-b-primary hover:border-b-4 cursor-pointer mr-3">
+    <div className=" z-0 rounded-lg mt-3  bg-[#fafafa] hover:border hover:border-white hover:border-b-primary hover:border-b-4 cursor-pointer mr-3">
       <div className=" bg-white flex px-5 py-7">
         <svg
           width="40"
