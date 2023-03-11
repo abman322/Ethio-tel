@@ -48,7 +48,7 @@ export default function Business({ busin }) {
           content="ethio telecom, previously known as the Ethiopian Telecommunications Corporation, is an Ethiopian telecommunication company serving as the major internet and telephone service provider."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"
           rel="stylesheet"
