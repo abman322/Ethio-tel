@@ -10,7 +10,7 @@ import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
 import Recharge from "@/components/Recharge";
 import ChatBot from "@/components/ChatBot";
-import { getNews, getBanners, urlFor, getProducts } from "./sane";
+import { getNews, getBanners, urlFor, getProducts } from "../components/sane";
 
 export async function getServerSideProps(context) {
   const news = await getNews();

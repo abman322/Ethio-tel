@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "@/pages/sane";
+import { urlFor } from "@/components/sane";
 
 export default function ArticleCard({
   image,

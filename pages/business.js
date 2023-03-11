@@ -17,7 +17,7 @@ import {
   Line,
   fiveG,
 } from "@/components/SvgIcons";
-import { getBusiness, urlFor } from "./sane";
+import { getBusiness, urlFor } from "../components/sane";
 
 export async function getServerSideProps(context) {
   const busin = await getBusiness();
