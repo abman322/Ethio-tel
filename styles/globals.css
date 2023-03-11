@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  background-color: rgb(55, 181, 65);
+  color: white;
+}
+.vis {
+  display: none;
+}
+.activer {
+  color: white;
+  background-color: None;
+}
+
+.picked {
+  background-color: black;
+}
