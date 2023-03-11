@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function business({ busin }) {
+export default function Business({ busin }) {
   const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: true,
