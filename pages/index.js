@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
-import Recharge from "@/components/recharge";
+import Recharge from "@/components/Recharge";
 import ChatBot from "@/components/ChatBot";
 import { getNews, getBanners, urlFor, getProducts } from "./sane";
 
