@@ -85,10 +85,10 @@ export default function Home() {
         <Fragment>
           <div className=" z-50">
             <button
-              className="  text-white bg-blue-700 fixed bottom-0 right-0 hover:bg-blue-800 focus:outline-none font-medium text-sm rounded-lg px-5 py-2.5 mr-5 ml-10 my-5"
+              className="  text-white rounded-full bg-[#2590ce] fixed bottom-0 right-0 hover:bg-blue-800 focus:outline-none font-medium text-sm  px-5 py-2.5 mr-5 ml-10 my-5"
               onClick={() => setShowModal(true)}
             >
-              Modal
+              Chat
             </button>
           </div>
           <ChatBot isVisible={showModal} onClose={() => setShowModal(false)} />
