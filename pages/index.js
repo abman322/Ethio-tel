@@ -10,8 +10,21 @@ import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
 import Recharge from "@/components/recharge";
 import ChatBot from "@/components/ChatBot";
+import {getNews,getBanners, urlFor, getProducts} from './sane'
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const news=await getNews()
+  const banner=await getBanners()
+  const product=await getProducts()
+  
+  return {
+    props: {news,banner,product}, // will be passed to the page component as props
+  }
+}
+
+
+export default function Home({news,banner,product}) {
+  console.log(banner)
   const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: false,
@@ -98,6 +111,17 @@ export default function Home() {
 
         {/* MAIN SLIDER */}
         <Slider {...settings}>
+          {banner!=null && banner.map((element)=>{
+            return (
+              <HeroBanner
+            header={element.title}
+            description={element.description}
+            image={urlFor(element.mainImage).url()}
+            btnText={element.btntxt}
+          />
+            )
+          })}
+          
           <HeroBanner
             header="Get your prepaid sim"
             description=" Enjoy doorstep KYC, paperless process, and quick activation"
@@ -125,12 +149,25 @@ export default function Home() {
           <section className=" mx-12">
             {/* PRODUCT AND SERVICE SLIDER */}
             <Slider {...settingss}>
+                  {product!=null && product.map((element)=>{
+                  return (
+                    <ArticleCard
+                      image={
+                        urlFor(element.mainImage).url()
+                      }
+                      tagline={element.tagline}
+                      header={element.title}
+                      description={element.description}
+                      buttonText={element.btntxt}
+                    />
+                  )
+                })}
               <ArticleCard
                 image={
-                  "https://ethio.news/wp-content/uploads/2018/09/Untitled-design-7-1-768x402.png"
+                  urlFor(banner[0].mainImage).url()
                 }
                 tagline="PACKAGE"
-                header="No expiry data Package"
+                header={banner.title}
                 description=" we offer no expiry data packages, to get 10% off pay with telebirr"
                 buttonText="Read More"
               />

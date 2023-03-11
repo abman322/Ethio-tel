@@ -1,4 +1,5 @@
 import React from "react";
+import { urlFor } from "@/pages/sane";
 
 export default function ArticleCard({
   image,

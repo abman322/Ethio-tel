@@ -9,8 +9,18 @@ import HeroBanner from "@/components/HeroBanner";
 import Footer from "@/components/Footer";
 import BusinessHeader from "@/components/BusinessHeader";
 import ServiceCard from "@/components/ServiceCard";
+import { getBusiness,urlFor } from "./sane";
 
-export default function business() {
+export async function getServerSideProps(context) {
+  const busin=await getBusiness()
+  
+  
+  return {
+    props: {busin}, // will be passed to the page component as props
+  }
+}
+
+export default function business({busin}) {
   var settings = {
     dots: true,
     infinite: true,
@@ -36,6 +46,16 @@ export default function business() {
         <TopHeader />
         <BusinessHeader />
         <Slider {...settings}>
+            {busin!=null && busin.map((element)=>{
+                return (
+                  <HeroBanner
+                header={element.title}
+                description={element.description}
+                image={urlFor(element.mainImage).url()}
+                btnText={element.btntxt}
+              />
+                )
+              })}
           <HeroBanner
             header="Dedicated Internet"
             description=" Strong and dedicated leased line connectivity for your company"
