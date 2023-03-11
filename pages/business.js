@@ -9,28 +9,25 @@ import HeroBanner from "@/components/HeroBanner";
 import Footer from "@/components/Footer";
 import BusinessHeader from "@/components/BusinessHeader";
 import ServiceCard from "@/components/ServiceCard";
-<<<<<<< HEAD
-import { getBusiness,urlFor } from "./sane";
+import {
+  Cloud,
+  Conference,
+  Connectivity,
+  Security,
+  Line,
+  fiveG,
+} from "@/components/SvgIcons";
+import { getBusiness, urlFor } from "./sane";
 
 export async function getServerSideProps(context) {
-  const busin=await getBusiness()
-  
-  
+  const busin = await getBusiness();
+
   return {
-    props: {busin}, // will be passed to the page component as props
-  }
+    props: { busin }, // will be passed to the page component as props
+  };
 }
 
-export default function business({busin}) {
-=======
-import { Cloud } from "@/components/SvgIcons";
-import { Connectivity } from "@/components/SvgIcons";
-import { Line } from "@/components/SvgIcons";
-import { fiveG } from "@/components/SvgIcons";
-import { Security } from "@/components/SvgIcons";
-import { Conference } from "@/components/SvgIcons";
-export default function business() {
->>>>>>> 07aaaad12000fc12173f04796c88adaece53480a
+export default function business({ busin }) {
   var settings = {
     dots: true,
     infinite: true,
@@ -59,16 +56,17 @@ export default function business() {
         <TopHeader />
         <BusinessHeader />
         <Slider {...settings}>
-            {busin!=null && busin.map((element)=>{
-                return (
-                  <HeroBanner
-                header={element.title}
-                description={element.description}
-                image={urlFor(element.mainImage).url()}
-                btnText={element.btntxt}
-              />
-                )
-              })}
+          {busin != null &&
+            busin.map((element) => {
+              return (
+                <HeroBanner
+                  header={element.title}
+                  description={element.description}
+                  image={urlFor(element.mainImage).url()}
+                  btnText={element.btntxt}
+                />
+              );
+            })}
           <HeroBanner
             header="Dedicated Internet"
             description=" Strong and dedicated leased line connectivity for your company"
