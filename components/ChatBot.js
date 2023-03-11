@@ -13,7 +13,7 @@ function ChatBot({ isVisible, onClose }) {
     e.preventDefault();
     setLoading(true);
     const message = await fetch(
-      `http://localhost:3000/api/chat?question=${singletext}`
+      `https://ethio-tel.vercel.app/api/chat?question=${singletext}`
     );
     const res = await message.json();
     // setMessage(res);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, Fragment } from "react";
 import Head from "next/head";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,6 +9,7 @@ import HeroBanner from "@/components/HeroBanner";
 import Footer from "@/components/Footer";
 import BusinessHeader from "@/components/BusinessHeader";
 import ServiceCard from "@/components/ServiceCard";
+import ChatBot from "@/components/ChatBot";
 import {
   Cloud,
   Conference,
@@ -28,6 +29,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function business({ busin }) {
+  const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: true,
     infinite: true,
@@ -53,6 +55,18 @@ export default function business({ busin }) {
         />
       </Head>
       <main>
+        {/* CHATBOT*/}
+        <Fragment>
+          <div className=" z-50">
+            <button
+              className="  text-white rounded-full bg-[#2590ce] fixed bottom-0 right-0 hover:bg-blue-800 focus:outline-none font-medium text-sm  px-5 py-2.5 mr-5 ml-10 my-5"
+              onClick={() => setShowModal(true)}
+            >
+              Chat
+            </button>
+          </div>
+          <ChatBot isVisible={showModal} onClose={() => setShowModal(false)} />
+        </Fragment>
         <TopHeader />
         <BusinessHeader />
         <Slider {...settings}>
