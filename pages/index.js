@@ -199,30 +199,22 @@ export default function Home({ news, banner, product }) {
         <h1 className=" bg-[#f7f7fa] text-center font-semibold text-xl py-7">
           Latest News
         </h1>
-        <section className=" flex  flex-wrap mb-3 bg-[#f7f7fa] justify-center">
-          <div className=" w-96 mr-2 bg-white p-7 flex flex-col  gap-4 mb-4">
-            <h1 className=" text-xl">
-              Ethio Telecom Launches Its Ethiotel Innovation Program Which Is
-              Devised To Empower Our Nations Technology-Based Startups!
-            </h1>
 
-            <p className=" text-slate-500">
-              Our company has been deploying various technologies and value
-              adding services that can...
-            </p>
-            <button> Read More</button>
-          </div>
-          <div className=" w-96 mr-2 bg-white p-7 flex flex-col  gap-4 mb-4">
-            <h1 className=" text-xl">
-              Ethio Telecom Launches Its Ethiotel Innovation Program Which Is
-              Devised To Empower Our Nations Technology-Based Startups!
-            </h1>
-            <p className=" text-slate-500">
-              Our company has been deploying various technologies and value
-              adding services that can...
-            </p>
-            <button> Read More</button>
-          </div>
+        <section className=" flex  flex-wrap mb-3 bg-[#f7f7fa] justify-center">
+          {news != null &&
+            news.map((element) => {
+              return (
+                <div
+                  key={element}
+                  className=" w-96 mr-2 bg-white p-7 flex flex-col  gap-4 mb-4"
+                >
+                  <h1 className=" text-xl">{element.title}</h1>
+
+                  <p className=" text-slate-500">{element.content}</p>
+                  <button> Read More</button>
+                </div>
+              );
+            })}
         </section>
         <Footer />
         {/* <GoogleTranslate /> */}
