@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import Recharge from "@/components/Recharge";
 import ChatBot from "@/components/ChatBot";
 import { getNews, getBanners, urlFor, getProducts } from "../components/sane";
+import Plan from "@/components/plan";
 
 export async function getServerSideProps(context) {
   const news = await getNews();
@@ -146,6 +147,7 @@ export default function Home({ news, banner, product }) {
           /> */}
         </Slider>
         <Recharge />
+
         <section className=" bg-[#f7f7fa] z-0">
           <h1 className=" text-center font-semibold text-xl py-5">
             Product and Services
@@ -193,6 +195,7 @@ export default function Home({ news, banner, product }) {
             </Slider>
           </section>
         </section>
+
         <h1 className=" bg-[#f7f7fa] text-center font-semibold text-xl py-7">
           Latest News
         </h1>

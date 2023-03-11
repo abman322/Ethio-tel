@@ -15,6 +15,7 @@ function HeroBanner({ header, description, image, btnText }) {
       </div>
       <div className=" hidden sm:block w-[200px] md:w-[400px]">
         <img
+          alt={header}
           src={image} //"https://mir-s3-cdn-cf.behance.net/project_modules/disp/7a1c7e9995317.560ddb5268ce3.png"
         />
       </div>

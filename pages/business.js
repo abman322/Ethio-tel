@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import BusinessHeader from "@/components/BusinessHeader";
 import ServiceCard from "@/components/ServiceCard";
 import ChatBot from "@/components/ChatBot";
+import Plan from "@/components/plan";
 import {
   Cloud,
   Conference,
@@ -135,6 +136,9 @@ export default function Business({ busin }) {
             discription={"Safeguard your enterprise from threats."}
             Svg={Security}
           />
+          <div className=" text-black">
+            <Plan />
+          </div>
         </section>
 
         <Footer />

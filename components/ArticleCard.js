@@ -11,6 +11,7 @@ export default function ArticleCard({
   return (
     <article className=" w-[90%] max-w-[471px]   bg-white rounded-lg mb-16">
       <img
+        alt={header}
         className="w-full h-[180px] rounded-t-lg"
         src={image} //"https://thumbs.dreamstime.com/b/portrait-happy-young-beautiful-african-woman-talking-phone-park-afro-hair-relaxing-outdoors-193305228.jpg"
       />
