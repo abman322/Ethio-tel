@@ -9,7 +9,7 @@ export default function ArticleCard({
   buttonText,
 }) {
   return (
-    <article className=" w-[90%] max-w-[471px]   bg-white rounded-lg mb-16">
+    <article className=" w-[90%] max-w-[471px]   bg-white rounded-lg ">
       <img
         alt={header}
         className="w-full h-[180px] rounded-t-lg"

@@ -37,7 +37,7 @@ export default function Home({ news, banner, product }) {
   };
 
   var settingss = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
