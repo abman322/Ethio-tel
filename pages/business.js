@@ -60,6 +60,7 @@ export default function business({ busin }) {
             busin.map((element) => {
               return (
                 <HeroBanner
+                  key={element}
                   header={element.title}
                   description={element.description}
                   image={urlFor(element.mainImage).url()}

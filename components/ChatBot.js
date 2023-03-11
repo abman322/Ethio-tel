@@ -47,7 +47,7 @@ function ChatBot({ isVisible, onClose }) {
         >
           {text.map((element, index) => {
             return (
-              <div>
+              <div key={index}>
                 <h1 className=" bg-blue-600 ml-auto text-sm px-2 py-1 w-fit m-3  rounded-md ">
                   {element}
                 </h1>

@@ -10,21 +10,20 @@ import ArticleCard from "@/components/ArticleCard";
 import Footer from "@/components/Footer";
 import Recharge from "@/components/recharge";
 import ChatBot from "@/components/ChatBot";
-import {getNews,getBanners, urlFor, getProducts} from './sane'
+import { getNews, getBanners, urlFor, getProducts } from "./sane";
 
 export async function getServerSideProps(context) {
-  const news=await getNews()
-  const banner=await getBanners()
-  const product=await getProducts()
-  
+  const news = await getNews();
+  const banner = await getBanners();
+  const product = await getProducts();
+
   return {
-    props: {news,banner,product}, // will be passed to the page component as props
-  }
+    props: { news, banner, product }, // will be passed to the page component as props
+  };
 }
 
-
-export default function Home({news,banner,product}) {
-  console.log(banner)
+export default function Home({ news, banner, product }) {
+  console.log(banner);
   const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: false,
@@ -114,17 +113,19 @@ export default function Home({news,banner,product}) {
 
         {/* MAIN SLIDER */}
         <Slider {...settings}>
-          {banner!=null && banner.map((element)=>{
-            return (
-              <HeroBanner
-            header={element.title}
-            description={element.description}
-            image={urlFor(element.mainImage).url()}
-            btnText={element.btntxt}
-          />
-            )
-          })}
-          
+          {banner != null &&
+            banner.map((element) => {
+              return (
+                <HeroBanner
+                  key={element}
+                  header={element.title}
+                  description={element.description}
+                  image={urlFor(element.mainImage).url()}
+                  btnText={element.btntxt}
+                />
+              );
+            })}
+
           <HeroBanner
             header="Get your prepaid sim"
             description=" Enjoy doorstep KYC, paperless process, and quick activation"
@@ -152,23 +153,21 @@ export default function Home({news,banner,product}) {
           <section className=" mx-12">
             {/* PRODUCT AND SERVICE SLIDER */}
             <Slider {...settingss}>
-                  {product!=null && product.map((element)=>{
+              {product != null &&
+                product.map((element) => {
                   return (
                     <ArticleCard
-                      image={
-                        urlFor(element.mainImage).url()
-                      }
+                      key={element}
+                      image={urlFor(element.mainImage).url()}
                       tagline={element.tagline}
                       header={element.title}
                       description={element.description}
                       buttonText={element.btntxt}
                     />
-                  )
+                  );
                 })}
               <ArticleCard
-                image={
-                  urlFor(banner[0].mainImage).url()
-                }
+                image={urlFor(banner[0].mainImage).url()}
                 tagline="PACKAGE"
                 header={banner.title}
                 description=" we offer no expiry data packages, to get 10% off pay with telebirr"
