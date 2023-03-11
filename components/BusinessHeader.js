@@ -55,7 +55,7 @@ export default function BusinessHeader() {
                 data-dropdown-toggle="dropdownNavbar"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 md:w-auto "
               >
-                Dropdown
+                Packages
                 <svg
                   className="w-5 h-5 ml-1"
                   aria-hidden="true"
@@ -81,28 +81,20 @@ export default function BusinessHeader() {
                 >
                   <li>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
-                      Dashboard
+                      Businesss Mobile
                     </a>
                   </li>
                   <li>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-100 ">
-                      Settings
+                      Mobile group packages
                     </a>
                   </li>
                   <li>
                     <a href="#" className="block px-4 py-2 hover:bg-gray-100">
-                      Earnings
+                      Fixed Landline
                     </a>
                   </li>
                 </ul>
-                <div className="py-1">
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
-                  >
-                    Sign out
-                  </a>
-                </div>
               </div>
             </li>
             <li className=" ">
