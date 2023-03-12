@@ -17,3 +17,12 @@
 .picked {
   background-color: black;
 }
+.goog-te-menu-frame {
+  max-width:100% !important; 
+}
+.goog-te-menu2 { 
+  max-width: 100% !important;
+  overflow: scroll !important;
+  box-sizing:border-box !important; 
+  height:auto !important; 
+}

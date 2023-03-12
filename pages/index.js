@@ -24,7 +24,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ news, banner, product }) {
-  console.log(banner);
   const [showModal, setShowModal] = useState(false);
   var settings = {
     dots: false,
